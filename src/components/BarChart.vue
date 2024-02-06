@@ -35,7 +35,7 @@ export default {
     },
     createChart() {
       const ctx = document.getElementById('myChart')
-      new Chart(ctx, {
+      new Chart(ctx as HTMLCanvasElement, {
         type: 'bar',
         data: {
           labels: this.covidData.map((entry) => entry.country),
@@ -46,7 +46,6 @@ export default {
               backgroundColor: '#11ff00',
               borderColor: '#11ff00',
               borderWidth: 1,
-              color: '#ffffff',
               barThickness: 6
             },
             {
@@ -55,7 +54,6 @@ export default {
               backgroundColor: '#f54242',
               borderColor: '#f54242',
               borderWidth: 1,
-              color: '#ffffff',
               barThickness: 6
             }
           ]
@@ -63,11 +61,11 @@ export default {
         options: {
           scales: {
             y: {
-              ticks: { color: '#ffffff', beginAtZero: true },
+              ticks: { color: '#ffffff' },
               grid: { color: '#49494a' }
             },
             x: {
-              ticks: { color: '#ffffff', beginAtZero: true },
+              ticks: { color: '#ffffff' },
               grid: { color: '#49494a' }
             }
           },
