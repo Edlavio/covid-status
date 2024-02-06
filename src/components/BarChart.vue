@@ -22,11 +22,10 @@ export default {
   },
   methods: {
     fetchCovidData() {
-      // Supondo que você tenha uma função fetch ou uma biblioteca como Axios para obter os dados da API
       fetch('https://covid19-brazil-api.vercel.app/api/report/v1/countries', { cache: 'default' })
         .then((response) => response.json())
         .then((data) => {
-          this.covidData = data.data // Supondo que a resposta da API seja um array de objetos
+          this.covidData = data.data
           this.createChart()
         })
         .catch((error) => {
